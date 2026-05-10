@@ -1,20 +1,24 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "@/components/Hero.astro";
-import AllProducts from "@/components/AllProducts.tsx";
-import { getAllProducts } from "@/lib/shopify";
-import { setCache } from "@/lib/cache";
+// import Layout from "../layouts/Layout.astro";
+// import Hero from "@/components/Hero.astro";
+// import AllProducts from "@/components/AllProducts.tsx";
+// import { getAllProducts } from "@/lib/shopify";
+// import { setCache } from "@/lib/cache";
 
-const headers = Astro.request.headers;
-const ip = headers.get("x-vercel-forwarded-for") || Astro.clientAddress;
-const data = await getAllProducts({ limit: 100, buyerIP: ip });
+// const headers = Astro.request.headers;
+// const ip = headers.get("x-vercel-forwarded-for") || Astro.clientAddress;
+// const data = await getAllProducts({ limit: 100, buyerIP: ip });
 
-setCache.short(Astro);
+// setCache.short(Astro);
+
+return Astro.redirect("https://www.youtube.com/@Wendilunar", 302);
 ---
 
-<Layout title="WendiLunar" showNavbar={true} showFooter={true}>
+
+
+<!-- <Layout title="WendiLunar" showNavbar={true} showFooter={true}>
     <div class="flex min-h-screen flex-col items-center justify-center px-4 sm:px-8">
         <Hero />
         <AllProducts products={data.products} collections={data.collections} client:load />
     </div>
-</Layout>
+</Layout> -->
