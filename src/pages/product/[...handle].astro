@@ -1,26 +1,27 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import ProductDetailsCard from "@/components/ProductDetailsCard";
-import { getProductByHandle } from "@/lib/shopify";
-import ProductImages from "@/components/ProductImages";
-import type { z } from "astro/zod";
-import type { ProductResult } from "@/lib/schema";
+// import Layout from "@/layouts/Layout.astro";
+// import ProductDetailsCard from "@/components/ProductDetailsCard";
+// import { getProductByHandle } from "@/lib/shopify";
+// import ProductImages from "@/components/ProductImages";
+// import type { z } from "astro/zod";
+// import type { ProductResult } from "@/lib/schema";
 
-const headers = Astro.request.headers;
-const ip = headers.get("x-forwarded-for") || Astro.clientAddress;
-let product: z.infer<typeof ProductResult>;
-try {
-    product = await getProductByHandle(Astro.params.handle || "", ip);
-} catch (e) {
-    console.error(e);
-    return Astro.redirect("/404");
-}
-if (!product) {
-    return Astro.redirect("/404");
-}
+// const headers = Astro.request.headers;
+// const ip = headers.get("x-forwarded-for") || Astro.clientAddress;
+// let product: z.infer<typeof ProductResult>;
+// try {
+//     product = await getProductByHandle(Astro.params.handle || "", ip);
+// } catch (e) {
+//     console.error(e);
+//     return Astro.redirect("/404");
+// }
+// if (!product) {
+//     return Astro.redirect("/404");
+// }
+return Astro.redirect("https://www.youtube.com/@Wendilunar", 302);
 ---
 
-<Layout
+<!-- <Layout
     title={product?.title || "WendiLunar merch"}
     description={product?.description}
     ogImage={product?.featuredImage?.url}
@@ -33,4 +34,4 @@ if (!product) {
             </div>
         </div>
     </div>
-</Layout>
+</Layout> -->
